@@ -294,6 +294,46 @@ body {
   }
 }
 
+/* MOBILE FIX FOR ALL BANNERS */
+@media (max-width: 768px) {
+
+  /* Let banner resize naturally */
+  .site-banner {
+    height: auto;
+  }
+
+  .banner-image {
+    height: auto;
+  }
+
+  .banner-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Resize overlay text */
+  .banner-text,
+  .banner-text1,
+  .banner-text2 {
+    font-size: 1.6rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+
+  /* Reposition overlay text for mobile */
+  .banner-text {
+    top: 40%;
+  }
+
+  .banner-text1,
+  .banner-text2 {
+    top: 60%;
+  }
+}
+
+
+
 /* Product Card Images */
 .card-image {
   width: 100%;
