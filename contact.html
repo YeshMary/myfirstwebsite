@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact · YMOMA FOODS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-tagline">
+        <span class="tag-left">Cibus medicina et medicina cibus est</span>
+        <span class="tag-center">உணவே மருந்து, மருந்தே உணவு</span>
+        <span class="tag-right">Food is Medicine, Medicine is Food</span>
+      </div>
+      <span class="top-bar-verse">
+        “For it was neither herb, nor mollifying plaster that healed them,
+        but thy word, O Lord, which healeth all things.” – Wisdom 16:12
+      </span>
+    </div>
+  </header>
+
+ <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <img src="/images/icons/YMOMA.png" alt="YMOMA Foods Logo" class="nav-logo-img">
+        <a href="index.html" class="nav-logo-text">YMOMA FOODS</a>
+      </div>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="site-banner">
+    <div class="banner-image">
+      <img src="/images/AI/banner.png" alt="YMOMA Banner">
+      <div class="banner-text">A ZING IN YOUR TONGUE</div>
+      <div class="banner-text2">NO COMPROMISE</div>
+    </div>
+  </div>
+
+  <main class="page-main">
+
+    <section class="page-header">
+      <h1>Contact</h1>
+      <p>
+        Reach out to YMOMA Foods through any of the options below.
+      </p>
+    </section>
+
+    <!-- EXACT SAME GRID LAYOUT AS ORIGINAL YMOMA PAGE -->
+    <section class="grid-container">
+
+      <article class="grid-items">
+        <h2>Whatsapp us</h2>
+        <br>
+        <a href="https://wa.me/14377992255" target="_blank" rel="noopener noreferrer">
+          <img src="/images/icons/whatsapp.png" class="contact-icon">
+        </a>
+      </article>
+
+      <article class="grid-items">
+        <h2>Call us direct</h2>
+        <br>
+        <a href="tel:+14377992255">
+          <img src="/images/icons/oldphone.png" class="contact-icon">
+        </a>
+      </article>
+
+      <article class="grid-items">
+        <h2>Email Us</h2>
+        <br>
+        <a href="mailto:ymomafoods@gmail.com?subject=Inquiry%20about%20your%20services">
+          <img src="/images/icons/eml.png" class="contact-icon">
+        </a>
+      </article>
+
+    </section>
+
+    <!-- SOCIAL MEDIA BAR -->
+    <div class="social-media">
+      <a href="https://instagram.com/ymomafoods"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.facebook.com/share/1C431CMfTh/"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://t.me/ymomafoods"><i class="fa-brands fa-telegram"></i></a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 YMOMA Foods. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+
+  </script>
+</body>
+</html>
