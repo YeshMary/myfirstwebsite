@@ -581,3 +581,8 @@ body.home .banner-image img {
     pointer-events: auto;
   }
 }
+@media (max-width: 768px) {
+  body:not(.home) .banner-image img {
+    object-position: bottom !important;
+  }
+}
