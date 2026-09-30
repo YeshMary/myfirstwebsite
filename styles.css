@@ -332,6 +332,13 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  body:not(.home) .site-banner {
+    max-height: 180px;
+    overflow: hidden;
+  }
+}
+
 
 
 /* Product Card Images */
@@ -727,3 +734,51 @@ body {
     pointer-events: auto;
   }
 }
+
+
+/* FINAL MOBILE FIX FOR ALL BANNERS */
+@media (max-width: 768px) {
+
+  /* Homepage: full banner */
+  body.home .site-banner {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Inner pages: shorter banner */
+  body:not(.home) .site-banner {
+    height: 180px;
+    overflow: hidden;
+  }
+
+  /* Image behavior */
+  .banner-image {
+    height: 100%;
+  }
+
+  .banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* Overlay text sizing */
+  .banner-text,
+  .banner-text1,
+  .banner-text2 {
+    font-size: 1.6rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  }
+
+  /* Overlay text positioning */
+  .banner-text {
+    top: 38%;
+  }
+
+  .banner-text1,
+  .banner-text2 {
+    top: 58%;
+  }
+}
+
