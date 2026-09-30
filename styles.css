@@ -1,14 +1,14 @@
 :root {
-  --bg-main: #FFF9F0;                 /* warm vanilla cream */
+  --bg-main: #FFF9F0;
   --bg-card: #FFFFFF;
-  --bg-accent: #E8F4E8;               /* soft pistachio cream */
-  --bg-accent-soft: #F4FFF4;          /* very light mint */
+  --bg-accent: #E8F4E8;
+  --bg-accent-soft: #F4FFF4;
 
-  --text-main: #3B3F36;               /* deep herbal neutral */
+  --text-main: #3B3F36;
   --text-muted: #6F7A6F;
 
-  --accent-primary: #6FAF7F;          /* pistachio */
-  --accent-secondary: #A8C9A8;        /* soft herbal green */
+  --accent-primary: #6FAF7F;
+  --accent-secondary: #A8C9A8;
 
   --border-soft: rgba(0, 0, 0, 0.08);
   --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.06);
@@ -23,7 +23,7 @@
   --font-serif: "Georgia", "Times New Roman", serif;
 }
 
-/* Reset-ish */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -43,75 +43,35 @@ body {
 }
 
 /* Top bar */
-
 .top-bar {
-  background: linear-gradient(
-    90deg,
-    #618d61,   /* soft pistachio cream */
-    #F4FFF9    /* lighter mint pistachio */
-  );
+  background: linear-gradient(90deg, #618d61, #F4FFF9);
   color: var(--text-main);
   font-size: 0.85rem;
   border-bottom: 1px solid var(--border-soft);
 }
 
-
 .top-bar-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.5rem 1.25rem;
-
   display: flex;
-  flex-direction: column;     /* stack vertically */
-  align-items: center;        /* center horizontally */
-  text-align: center;         /* center text */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.35rem;
 }
 
 .top-bar-tagline {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* three equal sections */
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
   padding: 0.25rem 0;
 }
 
-.tag-left {
-  text-align: left;
-  font-weight: 600;
-}
-
-.tag-center {
-  text-align: center;
-  font-weight: 600;
-}
-
-.tag-right {
-  text-align: right;
-  font-weight: 600;
-}
-
-/* If I want these stacked in my mobile then I use it below*/
-/*
-@media (max-width: 600px) {
-  .top-bar-tagline {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-  }
-
-  .tag-left,
-  .tag-center,
-  .tag-right {
-    text-align: center;
-  }
-}
-*/
-/* If I want these stacked in my mobile then I use it above*/
-
-
+.tag-left { text-align: left; font-weight: 600; }
+.tag-center { text-align: center; font-weight: 600; }
+.tag-right { text-align: right; font-weight: 600; }
 
 .top-bar-verse {
   font-style: italic;
@@ -137,12 +97,23 @@ body {
   justify-content: space-between;
 }
 
-.nav-logo {
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.nav-logo-text {
+  font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: #2f4f3e;
   text-decoration: none;
-  color: var(--text-main);
 }
 
 .nav-links {
@@ -177,11 +148,6 @@ body {
   width: 100%;
 }
 
-.nav-links a.active {
-  color: var(--accent-primary);
-}
-
-/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   background: none;
@@ -198,60 +164,47 @@ body {
   margin: 4px 0;
   border-radius: 999px;
 }
+
+/* ============================
+   BANNER — CLEAN FINAL VERSION
+   ============================ */
+
 .site-banner {
   position: relative;
   width: 100%;
   overflow: hidden;
+  height: 260px; /* inner page default */
 }
 
-
-/* Default: smaller banner on inner pages */
-.site-banner {
-  height: 260px;        /* controls banner height */
-  overflow: hidden;     /* forces cropping */
+body.home .site-banner {
+  height: auto;
+  overflow: visible;
 }
-
 
 .banner-image {
   position: relative;
-  height: 100%;   /* <-- REQUIRED for cropping */
+  width: 100%;
+  height: 100%;
 }
 
 .banner-image img {
   width: 100%;
-  height: 100%;     /* <-- REQUIRED */
-  display: block;
-  object-fit: cover; /* <-- REQUIRED */
-  object-position: bottom; /* <-- REQUIRED */
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
 }
 
-
-.site-banner .banner-image img {
-  width: 100%;
-  height: 100%;         /* forces cropping */
-  object-fit: cover;    /* crop instead of shrink */
-  object-position: center bottom;  /* <-- crop from bottom */
-}
-
-/* Homepage: full banner */
-.home .site-banner {
-  height: auto;         /* remove height limit */
-  overflow: visible;    /* show full image */
-}
-
-.home .banner-image img {
-  height: auto;         /* show full image */
-  object-fit: contain;  /* no cropping */
+body.home .banner-image img {
+  height: auto;
+  object-fit: contain;
   object-position: center;
 }
-
-
 
 /* Overlay text */
 .banner-text {
   position: absolute;
-  top: 50%; /* centers vertically */
-  left: 50%; /* centers horizontally */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(186, 219, 177);
   font-size: 3rem;
@@ -261,23 +214,11 @@ body {
   z-index: 2;
 }
 
-.banner-text1 {
-  position: absolute;
-  top: 75%; /* centers vertically */
-  left: 50%; /* centers horizontally */
-  transform: translate(-50%, -50%);
-  color: rgb(186, 219, 177);
-  font-size: 3rem;
-  font-weight: 800;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  z-index: 2;
-}
-
+.banner-text1,
 .banner-text2 {
   position: absolute;
-  top: 75%; /* centers vertically */
-  left: 50%; /* centers horizontally */
+  top: 75%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(186, 219, 177);
   font-size: 3rem;
@@ -287,6 +228,46 @@ body {
   z-index: 2;
 }
 
+/* ============================
+   MOBILE — FINAL FIX
+   ============================ */
+@media (max-width: 768px) {
+
+  body.home .site-banner {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  body:not(.home) .site-banner {
+    height: 180px !important;
+    overflow: hidden !important;
+  }
+
+  .banner-image {
+    height: 100%;
+  }
+
+  .banner-image img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .banner-text,
+  .banner-text1,
+  .banner-text2 {
+    font-size: 1.4rem;
+  }
+
+  .banner-text {
+    top: 42%;
+  }
+
+  .banner-text1,
+  .banner-text2 {
+    top: 68%;
+  }
+}
 
 /* Product Card Images */
 .card-image {
@@ -303,7 +284,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   object-fit: cover;
 }
-
 
 /* Hero */
 .hero {
@@ -460,7 +440,7 @@ body {
   padding: 2rem;
   border-radius: 14px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  border-left: 6px solid #4a7c59; /* YMOMA green accent */
+  border-left: 6px solid #4a7c59;
 }
 
 .about-card h2 {
@@ -488,7 +468,7 @@ body {
   max-width: 500px;
   width: 100%;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  border-left: 6px solid #4a7c59; /* YMOMA green accent */
+  border-left: 6px solid #4a7c59;
   text-align: left;
 }
 
@@ -511,8 +491,7 @@ body {
   line-height: 1.6;
 }
 
-
-/* CONTACT GRID (matches original YMOMA layout) */
+/* Contact grid */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -539,7 +518,7 @@ body {
   height: 60px;
 }
 
-/* SOCIAL MEDIA BAR */
+/* Social media */
 .social-media {
   margin-top: 2rem;
   text-align: center;
@@ -556,86 +535,7 @@ body {
   color: #2f4f3e;
 }
 
-/* Contact page */
-
-.nav-links.open {
-  display: block;
-}
-
-/* NAV BRAND WITH LOGO */
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo-img {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-}
-
-.nav-logo-text {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #2f4f3e;
-  text-decoration: none;
-}
-
-
-
-
-
-
-/* Two-column layout */
-.two-column {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 1.75rem;
-}
-
-.two-column .column {
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  padding: 1.4rem 1.5rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--border-soft);
-}
-
-.two-column h2 {
-  margin-top: 0;
-  font-family: var(--font-serif);
-}
-
-.two-column p {
-  color: var(--text-muted);
-}
-
-/* Contact layout */
-.contact-layout {
-  margin-top: 2rem;
-}
-
-.contact-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  padding: 1.4rem 1.5rem;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--border-soft);
-}
-
-/* Footer */
-.footer {
-  border-top: 1px solid var(--border-soft);
-  padding: 1.25rem 1.25rem 1.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  background: #ffffff;
-}
-
-/* Responsive */
+/* Responsive nav */
 @media (max-width: 768px) {
   .top-bar-inner {
     flex-direction: column;
@@ -679,51 +579,5 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-  }
-}
-
-/* FINAL MOBILE BANNER LAYOUT */
-@media (max-width: 768px) {
-
-  /* Homepage: full banner */
-  body.home .site-banner {
-    height: auto;
-    overflow: visible;
-  }
-
-  /* Inner pages: shorter banner */
-  body:not(.home) .site-banner {
-    height: 180px !important;
-    overflow: hidden !important;
-  }
-
-  /* Image behavior */
-  .banner-image {
-    height: 100%;
-  }
-
-  .banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* Overlay text sizing */
-  .banner-text,
-  .banner-text1,
-  .banner-text2 {
-    font-size: 1.4rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-  }
-
-  /* Overlay text positioning */
-  .banner-text {
-    top: 42%;
-  }
-
-  .banner-text1,
-  .banner-text2 {
-    top: 68%;
   }
 }
