@@ -591,6 +591,29 @@ body.home .banner-image img {
   font-size: 0.95rem;
 }
 
+.social-media-side {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  z-index: 999;
+}
+
+.social-media-side a {
+  font-size: 2rem;
+  color: #4a7c59;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-media-side a:hover {
+  color: #2f4f3e;
+}
+
+
 @media (max-width: 768px) {
   body:not(.home) .banner-image img {
     height: 300px !important;
