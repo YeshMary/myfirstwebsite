@@ -243,31 +243,33 @@ body.home .banner-image img {
     overflow: hidden !important;
   }
 
-  .banner-image {
-    height: 100%;
+  body:not(.home) .banner-image {
+    height: auto !important;
   }
 
-  .banner-image img {
+ /* .banner-image img {
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
+    */
 
   .banner-text,
   .banner-text1,
   .banner-text2 {
-    font-size: 1.4rem;
+    font-size: .85rem;
   }
 
   .banner-text {
-    top: 42%;
+    top: 32%;
   }
 
   .banner-text1,
   .banner-text2 {
-    top: 68%;
+    top: 48%;
   }
 }
+
 
 /* Product Card Images */
 .card-image {
@@ -581,8 +583,19 @@ body.home .banner-image img {
     pointer-events: auto;
   }
 }
+
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: #2f4f3e;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 768px) {
   body:not(.home) .banner-image img {
+    height: 300px !important;
+    object-fit: cover !important;
     object-position: bottom !important;
   }
 }
+
