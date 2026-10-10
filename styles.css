@@ -644,7 +644,7 @@ body.home .banner-image img {
   }
 }
 
-
+/*
 @media (max-width: 768px) {
   body:not(.home) .banner-image img {
     height: 300px !important;
@@ -652,4 +652,4 @@ body.home .banner-image img {
     object-position: bottom !important;
   }
 }
-
+*/
